@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  min-height:100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-slow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 0.85; }
+  96% { opacity: 1; }
+}
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-780px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease-out forwards;
+}
+
+.animate-zoom-slow {
+  animation: zoom-slow 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Active when in view */
+.reveal.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.street-badge {
+  border: 2px solid rgba(163, 230, 53, 0.8); /* lime-400 */
+  box-shadow:
+    0 0 0 1px rgba(163, 230, 53, 0.2),
+    inset 0 0 0 1px rgba(163, 230, 53, 0.15);
+  letter-spacing: 0.2em;
+}
+.street-badge {
+  animation: flicker 6s infinite;
+}
+/* REPRESENTING STREET CULTURE */
+.hero-mid-text {
+  font-size: clamp(1.6rem, 1.8vw, 1.2rem);
+  font-family: 'Cinzel', serif;
+  margin-top: 6px;
+  font-size: 100;
+  letter-spacing: 0.08em;
+  font-weight: 100;
+  color: #a3e635;
+}
+.hero-end-text {
+  font-size: clamp(1.6rem, 1.8vw, 1.2rem);
+  font-family: 'Cinzel', serif;
+  margin-top: 6px;
+  font-size: 100;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #a3e635;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+}
+body{
+  font-family: theme('fontFamily.body');
+}
+.font-cinzel-decorative {
+  font-family: "Cinzel Decorative", serif;
+  margin-bottom:1rem;
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  font-weight: 400;
+  color: #f5f5f4;
+  letter-spacing: 0.01em;
+  line-height:1.1;
+}
+.hero {
+  min-height: 100vh;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shirt-lane {
+  width: 260px;
+  height: 350px;          /* CONTROLS SIZE */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;    /* space before subtitle */
+}
+.shirt-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0rem;
+  animation: slide-left 17s linear infinite;
+  opacity: 10;
+}
+
+.shirt-img {
+  height: 350px;
+  width: 260px;
+  flex-shrink: 0;
+}
