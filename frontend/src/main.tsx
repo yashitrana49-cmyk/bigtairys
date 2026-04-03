@@ -5,12 +5,13 @@ import { CartProvider } from "./context/CartContext";
 import "./index.css";
 import App from "./App.tsx";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <StrictMode>
     <BrowserRouter>
-    <CartProvider>
-    <App />
-    </CartProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
     </BrowserRouter>
     </StrictMode>
-)
+);
+
