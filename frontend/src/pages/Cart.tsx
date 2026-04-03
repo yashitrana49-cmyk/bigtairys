@@ -23,12 +23,12 @@ export default function Cart() {
 
       {cart.map((item) => (
         <div
-          key={'${item.id}-${item.size}'}
+          key={`${item.id}-${item.size}`}
           className="flex gap-6 border-b border-white/10 py-6"
         >
           <img
             src={item.image}
-            alt={'${item.name} - size ${item.size}'}
+            alt={`${item.name} - size ${item.size}`}
             className="w-40 h-40 object-cover"
           />
 

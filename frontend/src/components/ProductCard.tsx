@@ -28,12 +28,14 @@ export default function ProductCard({
           <img
             src={images[0]}
             alt={name}
-            className="absolute top-3 left-0 h-[99%] w-full object-contain transition-opacity duration-300"
+            loading="lazy"
+            className="absolute top-3 left-0 h-[99%] w-full object-contain transition-opacity duration-300 group-hover:opacity-0"
           />
         <img
             src={images[1]}
-            alt={name}
-            className="absolute top-3 left-0 h-[99%] w-full object-contain transition-opacity duration-300"
+            alt={`${name} alternative`}
+            loading="lazy"
+            className="absolute top-3 left-0 h-[99%] w-full object-contain transition-opacity duration-300 group-hover:opacity-0"
           />
         </div>
       </Link>

@@ -10,15 +10,17 @@ export default function Navbar() {
   return (
     <nav className="relative z-50">
       {/* Top bar */}
-      <div className="mx-auto max-w-7xl px-1 h-16 flex items-center text-white">
+      <div className="mx-auto max-w-7xl px-4 h-16 flex items-center text-white">
         
         {/* Logo → HOME */}
         <Link
           to="/"
-          onClick={() => setOpen(false)}
-          className="text-lime-400 font-extrabold uppercase tracking-wide hover:opacity-90 transition"
-        >
-          Big Tairys
+          onClick={() => setOpen(false)}>
+          <img 
+          src="/svg/bigtairys.svg"
+          alt="Big Tairys"
+          className="h-7 w-auto"
+        />
         </Link>
         <div className="ml-auto flex items-center gap-5">
         <Link to="/cart" className="relative text-white flex items-center text-xl">

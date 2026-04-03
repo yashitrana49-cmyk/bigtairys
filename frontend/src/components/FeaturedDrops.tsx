@@ -4,17 +4,18 @@ import ScrollReveal from "./ScrollReveal";
 export default function FeaturedDrops() {
   const navigate = useNavigate();
   return (
-    <section className="py-20 text-white">
-     <div className="mx-auto max-w-7xl px-6 sm:px-10">
+    <section className="py-20 sm:py-16 lg:py-20 text-white">
+     <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-10">
       <ScrollReveal className="mx-auto max-w-7xl px-8">
-       <h2 className="text-lime-400 text-5xl font-extrabold uppercase">
-       Featured Drops
-       </h2>
-
-       <div className="mt-10">
+        <img 
+        src="/svg/featureddrops.svg"
+        alt="Featured Drops"
+        className="h-10 sm:h-14 lg:h-16 w-auto"
+        />
+       <div className="mt-6 sm:mt-10">
        <button 
        onClick={() => navigate("/shop")}
-       className="mt-10 border border-lime-400 px-8 py-4 text-lime-400 font-extrabold uppercase hover:bg-lime-500 transition">
+       className="border border-lime-400 px-6 py-3 sm:py-4 text-lime-400 font-extrabold uppercase text-sm sm:text-base lg:text-lg rounded hover:bg-lime-400 hover:text-black transition-colors duration-300">
         Check this out →
        </button>
        </div>

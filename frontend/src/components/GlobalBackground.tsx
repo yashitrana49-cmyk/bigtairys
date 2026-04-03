@@ -2,7 +2,7 @@ export default function GlobalBackground() {
   return (
     <div
       className="fixed inset-0 -z-10 bg-cover bg-center animate-zoom-slow"
-      style={{ backgroundImage: "url('/hero.jpg')" }}
+      style={{ backgroundImage: "url('/hero.jpeg')" }}
     >
       <div className="absolute inset-0 bg-black/70" />
     </div>

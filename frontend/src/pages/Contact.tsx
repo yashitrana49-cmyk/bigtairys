@@ -2,9 +2,11 @@ export default function Contact() {
   return (
     <section className="relative z-10 py-10 text-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-lime-400 uppercase text-center">
-          Get in Touch
-        </h1>
+        <img 
+        src="/svg/getintouch.svg"
+      alt="Get In Touch"
+        className="mx-auto h-15 md:h-16 object-contain mb-6"
+        />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
           
@@ -22,7 +24,7 @@ export default function Contact() {
               placeholder="Your message"
               className="w-full bg-transparent border border-gray-600 px-4 py-3 text-white h-32"
             />
-            <button className="font-button bg-lime-400 text-black px-6 py-3 font-semibold hover:bg-lime-500">
+            <button className="font-cinzel border border-lime-400 text-lime-400 px-8 py-3 tracking-widest uppercase hover:bg-lime-400 hover:text-black transition">
               Send Message
             </button>
           </div>

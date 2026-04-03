@@ -47,7 +47,7 @@ export default function Product() {
               <button
                 key={img}
                 onClick={() => setActiveImage(index)}
-                aria-label={'View image ${index + 1} of ${product.name}'}
+                aria-label={`View image ${index + 1} of ${product.name}`}
                 className={`border ${
                   activeImage === index
                     ? "border-lime-400"
@@ -56,7 +56,7 @@ export default function Product() {
               >
                 <img
                   src={img}
-                  alt={'${product.name} thumbnail ${index + 1}'}
+                  alt={`${product.name} thumbnail ${index + 1}`}
                   className="h-20 w-20 object-cover"
                 />
               </button>

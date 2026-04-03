@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-export default function ScrollReveal({ children }: Props) {
+export default function ScrollReveal({ children, className = "" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function ScrollReveal({ children }: Props) {
   }, []);
 
   return (
-    <div ref={ref} className={'reveal ${className}'}>
+    <div ref={ref} className={`reveal ${className}`}>
       {children}
     </div>
   );
