@@ -4,9 +4,11 @@ export default function ContactUs() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <h1 className="text-lime-400 text-3xl font-bold mb-6 font-cinzel uppercase">
-        Contact Us
-      </h1>
+          <img 
+        src="/svg/contactus.svg"
+        alt="Contact Us"
+        className="mx-auto h-15 md:h-16 object-contain mb-6"
+        />
           {/* Form */}
           <div className="space-y-4">
             <input
