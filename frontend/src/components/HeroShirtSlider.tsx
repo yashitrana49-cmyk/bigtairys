@@ -9,11 +9,13 @@ const shirts: Shirt[] = [
   { id: 3, src: "/shirts/tee1.png" }, // repeat for smooth loop
 ];
 
+const doubled = [...shirts, ...shirts];
+
 export default function HeroShirtSlider() {
   return (
     <div className="shirt-lane">
       <div className="shirt-track">
-        {shirts.map((shirt) => (
+        {doubled.map((shirt) => (
           <img
             key={shirt.id}
             src={shirt.src}

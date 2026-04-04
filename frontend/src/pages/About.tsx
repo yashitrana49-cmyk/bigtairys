@@ -1,11 +1,11 @@
 export default function About() {
   return (
-    <section className="relative z-10 py-10 text-white">
+    <section className="relative z-10 py-5 sm:py-16 text-white min-h-screen">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <img 
         src="/svg/aboutbigtairys.svg"
         alt="About Big Tairys"
-        className="mx-auto h-12 md:h-16 object-contain mb-4"
+        className="mx-auto h-15 md:h-16 object-contain mb-6"
         />
         <p className="mt-10 text-gray-300 sub-title text-center">
           BIG TAIRYS was born from the raw energy of urban culture.

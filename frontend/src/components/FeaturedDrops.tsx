@@ -5,12 +5,12 @@ export default function FeaturedDrops() {
   const navigate = useNavigate();
   return (
     <section className="py-20 sm:py-16 lg:py-20 text-white">
-     <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-10">
-      <ScrollReveal className="mx-auto max-w-7xl px-8">
+     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+      <ScrollReveal>
         <img 
         src="/svg/featureddrops.svg"
         alt="Featured Drops"
-        className="h-10 sm:h-14 lg:h-16 w-auto"
+        className="h-8 sm:h-14 lg:h-16 w-auto"
         />
        <div className="mt-6 sm:mt-10">
        <button 

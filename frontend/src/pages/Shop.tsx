@@ -3,8 +3,8 @@ import ProductCard from "../components/ProductCard";
 
 export default function Shop() {
   return (
-    <section className="relative z-10 py-10 text-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+    <section className="relative z-10 py-10 sm:py-16 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <img 
         src="/svg/shop.svg"
         alt="Shop"

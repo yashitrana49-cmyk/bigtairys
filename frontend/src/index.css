@@ -17,15 +17,6 @@ html, body, #root {
   }
 }
 
-@keyframes zoom-slow {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -47,7 +38,7 @@ html, body, #root {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-780px);
+    transform: translateX(-50%);
   }
 }
 
@@ -88,7 +79,7 @@ html, body, #root {
 }
 /* REPRESENTING STREET CULTURE */
 .hero-mid-text {
-  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  font-size: clamp(1.2rem, 3.5vw, 1.2rem);
   font-family: 'Cinzel', serif;
   margin-top: 6px;
   font-size: 100;
@@ -97,7 +88,7 @@ html, body, #root {
   color: #a3e635;
 }
 .hero-end-text {
-  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  font-size: clamp(1.2rem, 3.5vw, 1.2rem);
   font-family: 'Cinzel', serif;
   margin-top: 6px;
   font-size: 100;
@@ -148,7 +139,7 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: -40px;
 }
 .hero-title img {
   width: 500px;        /* adjust */
@@ -181,7 +172,7 @@ body{
   line-height:1.1;
 }
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   padding-top: 0;
   display: flex;
   flex-direction: column;
@@ -189,23 +180,22 @@ body{
   align-items: center;
 }
 .shirt-lane {
-  width: min(260px, 80vw);
-  height: 300px;          /* CONTROLS SIZE */
+  width: 100%;         /* CONTROLS SIZE */
   overflow: hidden;
-  position: relative;
   margin-bottom: 1rem;    /* space before subtitle */
 }
 .shirt-track {
   display: flex;
-  width: max-screen;
+  width: max-content;
   align-items: center;
-  gap: 10rem;
-  animation: slide-left 17s linear infinite;
-  opacity: 10;
+  gap: 2rem;
+  animation: slide-left 10s linear infinite;
+  will-change: transform;
 }
 
 .shirt-img {
-  height: 350px;
-  width: 260px;
+  height: 300px;
+  width: 220px;
   flex-shrink: 0;
+  object-fit: cover;
 }

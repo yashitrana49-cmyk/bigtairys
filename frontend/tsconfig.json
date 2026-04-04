@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "strict": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+     "allowJs": true,
+     "checkJs": false,
+    "noImplicitAny": false
   },
   "files": [],
   "references": [
