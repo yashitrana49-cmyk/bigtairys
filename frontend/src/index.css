@@ -33,14 +33,6 @@ html, body, #root {
   92% { opacity: 0.85; }
   96% { opacity: 1; }
 }
-@keyframes slide-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
 .animate-fade-in {
   animation: fade-in 1.2s ease-out forwards;
@@ -179,23 +171,93 @@ body{
   justify-content: center;
   align-items: center;
 }
-.shirt-lane {
-  width: 100%;         /* CONTROLS SIZE */
-  overflow: hidden;
-  margin-bottom: 1rem;    /* space before subtitle */
-}
-.shirt-track {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  gap: 2rem;
-  animation: slide-left 10s linear infinite;
-  will-change: transform;
+.drop-section {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
 }
 
-.shirt-img {
-  height: 300px;
-  width: 220px;
-  flex-shrink: 0;
+.product-rail {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.75rem max(1rem, calc((100vw - 1200px) / 2)) 1.25rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.product-rail-card {
+  flex: 0 0 clamp(230px, 28vw, 340px);
+  scroll-snap-align: center;
+  overflow: hidden;
+  border: 1px solid rgb(163 230 53 / 0.3);
+  background: #050505;
+  color: white;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.product-rail-card:hover {
+  border-color: #a3e635;
+  transform: translateY(-5px);
+}
+
+.product-rail-card:focus-visible {
+  outline: 2px solid #a3e635;
+  outline-offset: 4px;
+}
+
+.product-rail-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: white;
+}
+
+.product-rail-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.product-rail-card:hover img {
+  transform: scale(1.03);
+}
+
+.product-rail-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-rail-link {
+  color: #a3e635;
+}
+
+.shop-drop-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  border: 1px solid #a3e635;
+  padding: 0.8rem 1.4rem;
+  color: #a3e635;
+  font-family: Anton, sans-serif;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.shop-drop-button:hover {
+  background: #a3e635;
+  color: black;
 }
