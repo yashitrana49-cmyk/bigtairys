@@ -4,17 +4,17 @@ const drops = [
   {
     id: "1",
     name: "Liberty Front",
-    image: "/shirts/tee1.png",
+    image: "/shirts/tshirt1front.png",
   },
   {
     id: "1",
     name: "Liberty Back",
-    image: "/shirts/tee2.png",
+    image: "/shirts/tshirt1back.png",
   },
   {
     id: "1",
     name: "Liberty Edition",
-    image: "/shirts/tee1.png",
+    image: "/shirts/tshirt1front.png",
   },
 ];
 

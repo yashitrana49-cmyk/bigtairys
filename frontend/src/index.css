@@ -131,7 +131,7 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -40px;
+  margin-top: 0;
 }
 .hero-title img {
   width: 500px;        /* adjust */
@@ -260,4 +260,30 @@ body{
 .shop-drop-button:hover {
   background: #a3e635;
   color: black;
+}
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    justify-content: flex-start;
+    padding: 1.5rem 0 3rem;
+  }
+
+  .hero-title {
+    margin-top: 0;
+    padding-top: 0.75rem;
+  }
+
+  .hero-title img {
+    width: min(540px, 120vw);
+    max-width: none;
+  }
+
+  .drop-section {
+    margin-top: 1.5rem;
+  }
+
+  .shop-drop-button {
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+  }
 }
