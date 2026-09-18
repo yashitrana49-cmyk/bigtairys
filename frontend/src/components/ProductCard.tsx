@@ -43,10 +43,13 @@ export default function ProductCard({
         <h3 className="text-sm uppercase tracking-wide">{name}</h3>
         <p className="mt-1 text-lime-400 font-semibold">₹{price}</p>
 
-        <button className="font-button mt-4 w-full border border-lime-400 py-2 text-sm uppercase hover:bg-lime-400 hover:text-black transition">
-          Add to cart
-        </button>
       </div>
+      <Link
+        to={`/product/${id}`}
+        className="border border-lime-400 px-6 py-3 sm:py-4 text-lime-400 font-extrabold uppercase text-sm sm:text-base lg:text-lg rounded hover:bg-lime-400 hover:text-black transition-colors duration-300"
+      >
+        Choose size
+      </Link>
     </div>
   );
 }

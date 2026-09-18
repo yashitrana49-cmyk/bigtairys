@@ -1,4 +1,5 @@
 import { useCart } from "../context/CartContext";
+import Checkout from "../components/Checkout";
 
 export default function Cart() {
   const {
@@ -38,7 +39,7 @@ export default function Cart() {
               Size: {item.size}
             </p>
             <p className="text-lime-400">₹{item.price}</p>
-
+          
             <div className="font-button flex gap-3 mt-3">
               <button
                 onClick={() =>
@@ -73,6 +74,10 @@ export default function Cart() {
 
       <div className="mt-10 text-xl">
         Total: <span className="text-lime-400">₹{total}</span>
+      </div>
+      <div className="border-lime-400 px-6 py-3 sm:py-4 text-lime-400 font-extrabold uppercase text-sm sm:text-base lg:text-lg rounded hover:text-black transition-colors duration-300">
+        
+        <Checkout totalAmount={total} />
       </div>
     </section>
   );
