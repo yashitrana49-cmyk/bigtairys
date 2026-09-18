@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
 import Checkout from "../components/Checkout";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const {
@@ -15,7 +16,18 @@ export default function Cart() {
   );
 
   if (cart.length === 0) {
-    return <div className="p-20 text-white">Cart is empty</div>;
+    return (
+      <section className="flex min-h-[50vh] flex-col items-center justify-center gap-5 px-6 text-white">
+        <h1 className="text-3xl uppercase">Your cart is empty</h1>
+
+        <Link
+          to="/shop"
+          className="border border-lime-400 px-6 py-3 sm:py-4 text-lime-400 font-extrabold uppercase text-sm sm:text-base lg:text-lg rounded hover:bg-lime-400 hover:text-black transition-colors duration-300"
+        >
+          Continue shopping
+        </Link>
+      </section>
+    );
   }
 
   return (

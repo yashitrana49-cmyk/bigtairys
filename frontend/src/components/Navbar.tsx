@@ -1,49 +1,69 @@
 import { useCart } from "../context/CartContext"
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+ useEffect(() => {
+   const closeMenu = () => setOpen(false);
+
+   const closeOnOutsideClick = (event: PointerEvent) => {
+     if (navRef.current && !navRef.current.contains(event.target as Node)) {
+       setOpen(false);
+     }
+   };
+
+   window.addEventListener("scroll", closeMenu, { passive: true });
+   window.addEventListener("touchmove", closeMenu, { passive: true });
+   document.addEventListener("pointerdown", closeOnOutsideClick);
+
+   return () => {
+     window.removeEventListener("scroll", closeMenu);
+     window.removeEventListener("touchmove", closeMenu);
+     document.removeEventListener("pointerdown", closeOnOutsideClick);
+   };
+ }, []);
   const { cart } = useCart();
   const count = cart.reduce((a, b) => a + b.quantity, 0);
 
   return (
-    <nav className="relative z-50">
+    <nav ref={navRef} className="relative z-50">
       {/* Top bar */}
       <div className="mx-auto max-w-7xl px-4 h-16 flex items-center text-white">
-        
         {/* Logo → HOME */}
-        <Link
-          to="/"
-          onClick={() => setOpen(false)}>
-          <img 
-          src="/svg/bigtairys.svg"
-          alt="Big Tairys"
-          className="h-7 w-auto"
-        />
+        <Link to="/" onClick={() => setOpen(false)}>
+          <img
+            src="/svg/bigtairys.svg"
+            alt="Big Tairys"
+            className="h-7 w-auto"
+          />
         </Link>
         <div className="ml-auto flex items-center gap-5">
-        <Link to="/cart" className="relative text-white flex items-center text-xl">
-          🛒
-          {count > 0 && (
-            <span className="absolute -top-2 -right-2 bg-lime-400 text-black text-xs px-1 rounded">
+          <Link
+            to="/cart"
+            className="relative text-white flex items-center text-xl"
+          >
+            🛒
+            {count > 0 && (
+              <span className="absolute -top-2 -right-2 bg-lime-400 text-black text-xs px-1 rounded">
                 {count}
               </span>
             )}
-        </Link>
-        <button
-          onClick={() => setOpen(!open)}
-          className="flex flex-col gap-1.5 focus:outline-none"
-          aria-label="Menu"
-        >
-          <span className="w-6 h-0.5 bg-white"></span>
-          <span className="w-6 h-0.5 bg-white"></span>
-          <span className="w-6 h-0.5 bg-white"></span>
-        </button>
-      </div>
+          </Link>
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex flex-col gap-1.5 focus:outline-none"
+            aria-label="Menu"
+          >
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+          </button>
+        </div>
       </div>
       {/* Divider */}
-    <div className="h-px bg-gradient-to-r from-transparent via-lime-400/40 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-lime-400/40 to-transparent" />
 
       {/* Dropdown */}
       {open && (
