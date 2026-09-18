@@ -7,7 +7,8 @@ export default function Checkout({ totalAmount }: { totalAmount: number }) {
 
   const handlePayment = async () => {
     // Step 1: create order on backend
-    const res = await fetch("http://localhost:5000/api/create-order", {
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const res = await fetch(`${apiUrl}/api/create-order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: totalAmount * 100 }), // convert to paise
