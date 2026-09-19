@@ -5,7 +5,7 @@ export default function About() {
         <img 
         src="/svg/aboutbigtairys.svg"
         alt="About Big Tairys"
-        className="mx-auto h-15 md:h-16 object-contain mb-6"
+        className="mx-auto h-14 md:h-16 object-contain mb-6"
         />
         <p className="mt-10 text-gray-300 sub-title text-center">
           BIG TAIRYS was born from the raw energy of urban culture.

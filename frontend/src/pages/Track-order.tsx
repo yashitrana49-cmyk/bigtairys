@@ -5,7 +5,7 @@ export default function TrackOrder() {
           <img 
         src="/svg/track.svg"
         alt="Track Your Order"
-        className="mx-auto h-15 md:h-16 object-contain mb-6"
+        className="mx-auto h-14 md:h-16 object-contain mb-6"
         />
           
         </div>

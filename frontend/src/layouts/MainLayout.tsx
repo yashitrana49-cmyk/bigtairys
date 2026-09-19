@@ -1,7 +1,11 @@
+import { Suspense, lazy } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { LaserFlow } from '../components/LaserFlow';
+
+// Lazy-loaded so three.js (~600 kB) stays out of the main bundle;
+// the chunk is fetched only when this layout first renders.
+const LaserFlow = lazy(() => import('../components/LaserFlow'));
 
 export default function MainLayout() {
   return (
@@ -17,8 +21,9 @@ export default function MainLayout() {
           backgroundColor: "#000",
         }}
       >
-        {/* @ts-expect-error LaserFlow provides defaults for all props internally */}
-        <LaserFlow />
+        <Suspense fallback={null}>
+          <LaserFlow />
+        </Suspense>
       </div>
 
       <div

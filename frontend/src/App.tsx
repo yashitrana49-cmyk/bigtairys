@@ -12,6 +12,7 @@ import RefundPolicy from "./pages/RefundPolicy"
 import PrivacyPolicy from "./pages/Privacy-policy"
 import TrackOrder from "./pages/Track-order"
 import Exchange from "./pages/Exchange"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/exchange" element={<Exchange />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
        </Route>
       </Routes>
   )

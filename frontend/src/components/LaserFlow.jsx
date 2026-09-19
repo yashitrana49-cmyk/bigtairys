@@ -239,10 +239,10 @@ void main(){
 `;
 
 export const LaserFlow = ({
-  className,
-  style,
+  className = '',
+  style = undefined,
   wispDensity = 3.0,
-  dpr,
+  dpr = undefined,
   mouseSmoothTime = 0.0,
   mouseTiltStrength = 0.01,
   horizontalBeamOffset = 0.0,

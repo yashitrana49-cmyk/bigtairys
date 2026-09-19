@@ -1,5 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+
+const STORAGE_KEY = "bigtairys-cart";
 
 type CartItem = {
   id: string;
@@ -20,8 +22,28 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
+function loadCartFromStorage(): CartItem[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed: unknown = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as CartItem[]) : [];
+  } catch {
+    return [];
+  }
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+
+  // Persist cart across page reloads
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    } catch {
+      // Storage full or unavailable — cart just won't persist
+    }
+  }, [cart]);
 
   const addToCart = (item: CartItem) => {
     setCart((prev) => {

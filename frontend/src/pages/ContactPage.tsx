@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const quickLinks = [
-  { label: "Track Your Order", href: "/Track-order" },
-  { label: "Exchange Your Order", href: "/Exchange" },
-  { label: "Shipping Policy", href: "/Shipping-policy" },
-  { label: "Refund Policy", href: "/Refund-policy" },
-  { label: "Contact Us", href: "/Contact-us" },
-  { label: "Privacy Policy", href: "/Privacy-policy" },
+  { label: "Track Your Order", href: "/track-order" },
+  { label: "Exchange Your Order", href: "/exchange" },
+  { label: "Shipping Policy", href: "/shipping-policy" },
+  { label: "Refund Policy", href: "/refund-policy" },
+  { label: "Contact Us", href: "/contact-us" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 export default function Contact() {
@@ -14,7 +16,7 @@ export default function Contact() {
         <img 
         src="/svg/getintouch.svg"
       alt="Get In Touch"
-        className="mx-auto h-15 md:h-16 object-contain mb-6"
+        className="mx-auto h-14 md:h-16 object-contain mb-6"
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -22,13 +24,13 @@ export default function Contact() {
         <ul className="flex flex-col gap-4">
           {quickLinks.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-white/80 hover:text-lime-400 transition-colors duration-200 text-base"
-              >
-                {link.label}
-              </a>
-            </li>
+                <Link
+                  to={link.href}
+                  className="text-white/80 hover:text-lime-400 transition-colors duration-200 text-base"
+                >
+                  {link.label}
+                </Link>
+              </li>
           ))}
         </ul>
       </div>

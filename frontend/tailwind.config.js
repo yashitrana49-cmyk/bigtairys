@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],  // paragraphs, prices
         button: ['Anton', 'sans-serif'], // buttons / CTAs
+        cinzel: ['Cinzel', 'serif'],     // headings / labels
         },
       keyframes: {
         fadeIn: {

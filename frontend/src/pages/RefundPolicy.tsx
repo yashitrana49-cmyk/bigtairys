@@ -5,7 +5,7 @@ export default function RefundPolicy() {
           <img 
         src="/svg/refund.svg"
         alt="Refund Policy"
-        className="mx-auto h-15 md:h-16 object-contain mb-6"
+        className="mx-auto h-14 md:h-16 object-contain mb-6"
         />
           
         </div>
